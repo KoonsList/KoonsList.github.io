@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Week 11</title>
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <h1>Shopping List</h1>
+  <br>
+  <label>Item</label>
+  <input type="text" id="item" name="item" onkeydown="if (event.keyCode == 13) document.getElementById('btnSubmit').click()" />
+  <input class="button" id="btnSubmit" name="submit" type="button" value="Add Item" onclick="addShoppinglist(item.value)" />
+  <p id="MyList"></p>
+  <p id="MyCart"></p>
+  <input class="button" name="submit" type="submit" value="about" onclick="about()" />
+</body>
+
+
+</html>
