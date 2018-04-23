@@ -1,8 +1,61 @@
 // Ben Koons
 // Spring 2017
 // Web233 Javascript
-// Date: 4/8/18
-// Assignment #12
+// Date: 4/22/18
+// Assignment #13
+function get(name){
+    var url = window.location.search;
+    var num = url.search(name);
+    var namel = name.length;
+    var frontlength = namel+num+1; //length of everything before the value
+    var front = url.substring(0, frontlength);
+    url = url.replace(front, "");
+    num = url.search("&");
+    if(num>=0) return url.substr(0,num);
+    if(num<0)  return url;
+}
+//vFinal ShareList via bitly api
+function passlist()
+{
+   var getshorturl=0;
+   var login = "o_3iokgmm945";
+   var api_key = "R_f2f3c9387a374e3fc6bf4b1ec2c945c4";
+   var long_url = "https://rvclist.github.io/index.html?list="+ shoppinglist;
+  try{
+  $.getJSON(
+             "https://api-ssl.bitly.com/v3/shorten?callback=?",
+              {
+             "format": "json",
+              "apiKey": api_key,
+             "login": login,
+              "longUrl": long_url
+              },
+             function(response)
+             {
+                getshorturl = 1;
+                document.getElementById("sharelist").innerHTML = 'Share List:\n' + response.data.url;
+                copyToClipboard(response.data.url);
+                // copyToClipboard('sharelist');
+                 //alert("ShoppingList URL Copied");
+             });
+  } catch(err) {
+   //alert("Error : "+ err);
+    document.getElementById("sharelist").innerHTML = 'Share List:\n' + long_url;
+    //copyToClipboard("sharelist");
+    copyToClipboard(long_url);
+    //alert("ShoppingList URL Copied");
+}
+}
+//vFinal share function
+function share()
+{
+   passlist();
+}
+//v4.1 prompt message to copy URL
+function copyToClipboard(text) {
+   window.prompt("Copy & Share List!", text);
+}
+
 window.onload = function() {
  alert("Welcome to 'Shopping List' App!\n\nCreated by Rock Valley College\n**Javascript(Web233) Student: Ben Koons**");
  populateshoppinglistonload();
