@@ -19,7 +19,7 @@ function passlist()
 {
    var getshorturl=0;
    var login = "o_6mu9bfgh6t";
-   var api_key = "R_3bc1a890c4c949c692cfa14d2ce68846";
+   var api_key = "cc70b50273204882113517f5132ee8376cea703f";
    var long_url = "https://rvclist.github.io/index.html?list="+ shoppinglist;
   try{
   $.getJSON(
