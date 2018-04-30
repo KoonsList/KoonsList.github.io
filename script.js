@@ -19,7 +19,7 @@ function passlist()
 {
    var getshorturl=0;
    var login = "o_6mu9bfgh6t";
-   var api_key = "cc70b50273204882113517f5132ee8376cea703f";
+   var api_key = "R_fb441d9cfa40439299314267e04bb404";
    var long_url = "https://koonslist.github.io/index.html?list="+ shoppinglist;
   try{
   $.getJSON(
